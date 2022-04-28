@@ -9,61 +9,45 @@ export default class UserListComponent extends Component {
         <Table>
           <thead>
             <tr>
-              <th>
-                #
-              </th>
-              <th>
-                First Name
-              </th>
-              <th>
-                Last Name
-              </th>
-              <th>
-                Username
-              </th>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">
-                1
-              </th>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
               <td>
-                Mark
-              </td>
-              <td>
-                Otto
-              </td>
-              <td>
-                @mdo
+                <button className='btn btn-warning'>Edit</button>
+                &nbsp;
+                <button className='btn btn-danger'>Delete</button>
               </td>
             </tr>
             <tr>
-              <th scope="row">
-                2
-              </th>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
               <td>
-                Jacob
-              </td>
-              <td>
-                Thornton
-              </td>
-              <td>
-                @fat
+                <button className='btn btn-warning'>Edit</button>
+                &nbsp;
+                <button className='btn btn-danger'>Delete</button>
               </td>
             </tr>
             <tr>
-              <th scope="row">
-                3
-              </th>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
               <td>
-                Larry
-              </td>
-              <td>
-                the Bird
-              </td>
-              <td>
-                @twitter
+                <button className='btn btn-warning'>Edit</button>
+                &nbsp;
+                <button className='btn btn-danger'>Delete</button>
               </td>
             </tr>
           </tbody>
