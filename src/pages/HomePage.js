@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar, NavbarBrand } from 'reactstrap'
 import UserListComponent from '../components/UserListComponent'
+import { v4 as uuidv4 } from 'uuid';
 
 export default class HomePage extends Component {
   constructor(props){
@@ -8,31 +9,31 @@ export default class HomePage extends Component {
     this.state = {
       users : [
         {
-          id : 1,
+          id : uuidv4(),
           name : 'Mustafa',
           surname : 'Aydoğan',
           username : '4ydogan'
         },
         {
-          id : 2,
+          id : uuidv4(),
           name : 'Nikola',
           surname : 'Tesla',
           username : 'tesla'
         },
         {
-          id : 3,
+          id : uuidv4(),
           name : 'Elon',
           surname : 'Musk',
           username : 'ElonMusk'
         },
         {
-          id : 4,
+          id : uuidv4(),
           name : 'Jeff',
           surname : 'Bezos',
           username : 'JeffBezos'
         },
         {
-          id : 5,
+          id : uuidv4(),
           name : 'Bill',
           surname : 'Gates',
           username : 'BillGates'
