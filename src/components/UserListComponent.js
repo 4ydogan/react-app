@@ -17,39 +17,19 @@ export default class UserListComponent extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+            {this.props.users.map((user) => (
+              <tr key={user.id}>
+              <th scope="row">{user.id}</th>
+              <td>{user.name}</td>
+              <td>{user.surname}</td>
+              <td>{user.username}</td>
               <td>
                 <button className='btn btn-warning'>Edit</button>
                 &nbsp;
                 <button className='btn btn-danger'>Delete</button>
               </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>
-                <button className='btn btn-warning'>Edit</button>
-                &nbsp;
-                <button className='btn btn-danger'>Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td>
-                <button className='btn btn-warning'>Edit</button>
-                &nbsp;
-                <button className='btn btn-danger'>Delete</button>
-              </td>
-            </tr>
+            ))}
           </tbody>
         </Table>
       </div>
