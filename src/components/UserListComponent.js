@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Table } from 'reactstrap'
+import FormComponent from './FormComponent'
 
 export default class UserListComponent extends Component {
   render() {
     return (
       <div className='container'>
+        <FormComponent />
         <button className='btn btn-primary'>Add</button>
         {this.props.users.length > 0 ? (<Table>
           <thead>
