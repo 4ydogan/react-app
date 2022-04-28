@@ -6,7 +6,7 @@ export default class UserListComponent extends Component {
     return (
       <div className='container'>
         <button className='btn btn-primary'>Add</button>
-        <Table>
+        {this.props.users.length > 0 ? (<Table>
           <thead>
             <tr>
               <th>#</th>
@@ -31,7 +31,7 @@ export default class UserListComponent extends Component {
             </tr>
             ))}
           </tbody>
-        </Table>
+        </Table>) : null} 
       </div>
     )
   }
