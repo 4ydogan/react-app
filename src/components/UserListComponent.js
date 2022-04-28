@@ -3,11 +3,23 @@ import { Table } from 'reactstrap'
 import FormComponent from './FormComponent'
 
 export default class UserListComponent extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      visible : false
+    };
+    this.hide = this.hide.bind(this);
+  }
+
+  hide(){
+    this.setState({visible : false});
+  }
+
   render() {
     return (
       <div className='container'>
-        <FormComponent />
-        <button className='btn btn-primary'>Add</button>
+        <FormComponent visible={this.state.visible} hide={this.hide}/>
+        <button className='btn btn-primary' onClick={() => this.setState({visible : true})}>Add</button>
         {this.props.users.length > 0 ? (<Table>
           <thead>
             <tr>
