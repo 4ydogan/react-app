@@ -70,6 +70,8 @@ export default class HomePage extends Component {
       return user.id !== obj.id;
     });
     this.setState({users});
+
+    toast(`${obj.name} adlı kullanıcı dilindi.`);
   }
 
   render() {

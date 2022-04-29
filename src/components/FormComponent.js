@@ -19,9 +19,7 @@ export default class FormComponent extends Component {
       this.state.username
     );
     
-    this.props.hide();
-
-    
+    this.props.hide();    
   }
 
   render() {
@@ -32,15 +30,15 @@ export default class FormComponent extends Component {
           <Form>
             <FormGroup>
               <Label for="name">Name</Label>
-              <Input id="name" name="name" type="text" onChange={(e) => this.setState({name : e.target.value})}/>
+              <Input id="name" name="name" type="text" value={this.state.name} onChange={(e) => this.setState({name : e.target.value})}/>
             </FormGroup>
             <FormGroup>
               <Label for="surname">Surname</Label>
-              <Input id="surname" name="surname" type="text"onChange={(e) => this.setState({surname : e.target.value})}/>
+              <Input id="surname" name="surname" type="text" value={this.state.surname} onChange={(e) => this.setState({surname : e.target.value})}/>
             </FormGroup>
             <FormGroup>
               <Label for="username">Username</Label>
-              <Input id="username" name="username" type="text" onChange={(e) => this.setState({username : e.target.value})}/>
+              <Input id="username" name="username" type="text" value={this.state.username} onChange={(e) => this.setState({username : e.target.value})}/>
             </FormGroup>
           </Form>
         </ModalBody>
