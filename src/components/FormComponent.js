@@ -21,7 +21,7 @@ export default class FormComponent extends Component {
     
     this.props.hide();
 
-    alert(`"${this.state.username}" kullanıcısı eklendi.`)
+    
   }
 
   render() {

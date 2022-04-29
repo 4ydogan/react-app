@@ -40,7 +40,7 @@ export default class UserListComponent extends Component {
               <td>
                 <button className='btn btn-warning'>Edit</button>
                 &nbsp;
-                <button className='btn btn-danger'>Delete</button>
+                <button className='btn btn-danger' onClick={() => this.props.deleteUser(user)}>Delete</button>
               </td>
             </tr>
             ))}
