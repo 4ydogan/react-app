@@ -44,6 +44,7 @@ export default class HomePage extends Component {
 
     this.addUser = this.addUser.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
+    this.editUser = this.editUser.bind(this);
   }
 
   addUser = (name, surname, username) => {
@@ -61,17 +62,40 @@ export default class HomePage extends Component {
       toast(`${name} adlı kullanıcı eklendi.`);
     }
     else{
-      alert("Geçersiz input!")
+      alert("Geçersiz input!");
     }
   }
-
+  
   deleteUser = (obj) => {
     const users = this.state.users.filter( (user) => {
       return user.id !== obj.id;
     });
     this.setState({users});
 
-    toast(`${obj.name} adlı kullanıcı dilindi.`);
+    toast(`${obj.name} adlı kullanıcı silindi.`);
+  }
+
+  editUser = (id, name, surname, username) =>{
+    if(id, name, surname, username){
+      const users = {...this.state.users};
+      let updatedUsers = users.map((user) => {
+        if(user.id === id){
+          user = {
+            id : id,
+            name : name,
+            surname : surname,
+            username : username
+          };
+        }
+        return user; 
+      });
+      this.setState({users : updatedUsers});
+      toast(`${name} adlı kullanıcı güncellendi.`)
+    }
+    else{
+      alert("Geçersiz input!");
+    }
+
   }
 
   render() {
@@ -83,7 +107,7 @@ export default class HomePage extends Component {
             <NavbarBrand href='/'>React-Intro</NavbarBrand>
           </div>
          </Navbar>
-         <UserListComponent users={this.state.users} addUser={this.addUser} deleteUser={this.deleteUser}/>
+         <UserListComponent users={this.state.users} addUser={this.addUser} deleteUser={this.deleteUser} editUser={this.editUser}/>
       </div>
     )
   }

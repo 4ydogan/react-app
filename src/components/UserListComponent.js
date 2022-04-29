@@ -19,24 +19,16 @@ export default class UserListComponent extends Component {
   getElementById(value){
     this.setState({
       user: value,
-      visible : true
-    });
-  }
-
-  componentDidMount(){
-    this.setState({
-      id : this.props.user.id,
-      name : this.props.user.name,
-      surname : this.props.user.surname,
-      username : this.props.user.username
+      visible : true,
+      title : value.name
     });
   }
 
   render() {
     return (
       <div className='container'>
-        <FormComponent visible={this.state.visible} hide={this.hide} addUser={this.props.addUser } user={this.state.user}/>
-        <button className='btn btn-primary' onClick={() => this.setState({user : {}, visible : true})}>Add</button>
+        <FormComponent visible={this.state.visible} hide={this.hide} addUser={this.props.addUser } user={this.state.user} title={this.state.title} editUser={this.props.editUser}/>
+        <button className='btn btn-primary' onClick={() => this.setState({user : {}, visible : true, title:'New User'})}>Add</button>
         {this.props.users.length > 0 ? (<Table>
           <thead>
             <tr>
