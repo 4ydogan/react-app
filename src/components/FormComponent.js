@@ -1,18 +1,28 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import { v4 as uuidv4 } from 'uuid';
 
 export default class FormComponent extends Component {
 
-    constructor(props){
-      super(props);
-      this.state = {
-        id : uuidv4(),
-        name : "",
-        surname : "",
-        username : ""
-      }
+  constructor(props){
+    super(props);
+    this.state = {
+      name : "",
+      surname : "",
+      username : ""
     }
+  }
+
+  onSubmit(){
+    this.props.addUser(
+      this.state.name,
+      this.state.surname,
+      this.state.username
+    );
+    
+    this.props.hide();
+
+    alert(`"${this.state.username}" kullanıcısı eklendi.`)
+  }
 
   render() {
     return (
@@ -35,7 +45,8 @@ export default class FormComponent extends Component {
           </Form>
         </ModalBody>
       <ModalFooter>
-        <button className='btn btn-success' }>Add</button>
+        <button className='btn btn-success' onClick={() => {
+          this.onSubmit()}}>Add</button>
         <button className='btn btn-danger' onClick={() => this.props.hide()}>Cancel</button>
       </ModalFooter>
     </Modal>

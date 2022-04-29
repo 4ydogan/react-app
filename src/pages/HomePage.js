@@ -40,8 +40,26 @@ export default class HomePage extends Component {
         }
       ]
     };
+
+    this.addUser = this.addUser.bind(this);
   }
 
+addUser = (name, surname, username) => {
+  if(name, surname, username){
+    const  users = [...this.state.users];
+    users.push({
+      id : uuidv4(),
+      name : name,
+      surname : surname,
+      username : username
+    });
+
+    this.setState({users});
+  }
+  else{
+    alert("Geçersiz input!")
+  }
+}
 
   render() {
     return (
@@ -51,7 +69,7 @@ export default class HomePage extends Component {
             <NavbarBrand href='/'>React-Intro</NavbarBrand>
           </div>
          </Navbar>
-         <UserListComponent users={this.state.users} />
+         <UserListComponent users={this.state.users} addUser={this.addUser} />
       </div>
     )
   }

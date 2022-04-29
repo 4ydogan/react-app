@@ -18,7 +18,7 @@ export default class UserListComponent extends Component {
   render() {
     return (
       <div className='container'>
-        <FormComponent visible={this.state.visible} hide={this.hide}/>
+        <FormComponent visible={this.state.visible} hide={this.hide} addUser={this.props.addUser }/>
         <button className='btn btn-primary' onClick={() => this.setState({visible : true})}>Add</button>
         {this.props.users.length > 0 ? (<Table>
           <thead>
