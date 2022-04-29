@@ -77,7 +77,7 @@ export default class HomePage extends Component {
 
   editUser = (id, name, surname, username) =>{
     if(id, name, surname, username){
-      const users = {...this.state.users};
+      const users = [...this.state.users];
       let updatedUsers = users.map((user) => {
         if(user.id === id){
           user = {
