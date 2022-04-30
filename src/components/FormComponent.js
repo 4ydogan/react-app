@@ -7,9 +7,9 @@ export default class FormComponent extends Component {
     super(props);
     this.state = {
       id : null,
-      name : "",
-      surname : "",
-      username : ""
+      name : '',
+      surname : '',
+      username : ''
     }
   }
 
@@ -35,6 +35,7 @@ export default class FormComponent extends Component {
   }
 
   componentDidMount(){
+    console.log(this.props.user);
     this.setState({
       id : this.props.user.id,
       name : this.props.user.name,

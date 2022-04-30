@@ -104,7 +104,7 @@ export default class HomePage extends Component {
         <ToastContainer />
         <Navbar color='light' expand="md" light>
           <div>
-            <NavbarBrand href='/'>React-Intro</NavbarBrand>
+            <NavbarBrand href='/'></NavbarBrand>
           </div>
          </Navbar>
          <UserListComponent users={this.state.users} addUser={this.addUser} deleteUser={this.deleteUser} editUser={this.editUser}/>
